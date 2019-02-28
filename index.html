@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iframe-demo</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script>
+      window.onload = () => {
+        const ele = document.querySelector('iframe')
+        const btn = document.querySelector('.btn')
+        const content = document.querySelector('.content')
+
+        btn.addEventListener('click', () => {
+          // 因为不能动态更改allow属性，所以只能删除节点后再添加节点
+          ele.remove()
+          const iframe = document.createElement('iframe')
+          iframe.allow = 'fullscreen'
+          iframe.src = 'http://127.0.0.1:3000/iframe.html'
+          content.appendChild(iframe)
+        })
+      }
+    </script>
+</head>
+<body>
+    <div class="content">
+      <div class="btn">点我添加允许全屏属性</div>
+      <iframe allow="fullscreen 'none'" referrerpolicy="no-referrer" src='http://127.0.0.1:3000/iframe.html' name='frame'></iframe>
+      <iframe sandbox="allow-scripts" src='http://127.0.0.1:3000/iframe1.html' name='frame1'></iframe>
+    </div>
+</body>
+</html>

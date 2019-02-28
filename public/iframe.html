@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iframe-demo</title>
+    <link rel="stylesheet" type="text/css" href="iframe.css">
+    <script>
+      window.onload = () => {
+        const ele = document.querySelector('.div')
+        const btn = document.querySelector('.btn')
+        btn.addEventListener('click', () => {
+          ele.requestFullscreen()
+        })
+      }
+    </script>
+</head>
+<body>
+  <div class="div">我是内嵌的页面,用于演示allow属性和referrerpolicy属性</div>
+  <div class="btn">点击我全屏显示</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iframe-demo</title>
+    <link rel="stylesheet" type="text/css" href="iframe.css">
+    <script>
+      window.onload = () => {
+        const btn = document.querySelector('.alert')
+        btn.addEventListener('click', () => {
+          alert('我能够弹窗出来')
+        })
+      }
+    </script>
+</head>
+<body>
+  <div class="div">我是内嵌的页面,用于演示sandbox属性</div>
+  <form class="submit" method="get">
+      <p>First name: <input type="text" name="fname" /></p>
+      <p>Last name: <input type="text" name="lname" /></p>
+      <input type="submit" value="Submit" class="btn" />
+  </form>
+  <div class="btn alert">点击我Alert弹窗</div>
+</body>
+</html>
